@@ -12,11 +12,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className="bg-slate-950">
       <head>
-        <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+        <meta name="theme-color" content="#0f172a" />
       </head>
-      <body>{children}</body>
+      <body className="bg-slate-950 text-white overflow-hidden">{children}</body>
     </html>
   );
 }
