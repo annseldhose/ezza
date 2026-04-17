@@ -74,7 +74,7 @@ export default function VRViewer({ roomId = 'demo-room-1', onExit, onRoomChange 
 
       const skyboxMaterial = new BABYLON.StandardMaterial('skyboxMat', scene);
       skyboxMaterial.emissiveTexture = new BABYLON.Texture(room.image, scene);
-      skyboxMaterial.emissiveTexture.uScale = -1;
+      skyboxMaterial.emissiveTexture.uScale = 1;
       skyboxMaterial.backFaceCulling = false;
       skybox.material = skyboxMaterial;
 
@@ -252,7 +252,7 @@ export default function VRViewer({ roomId = 'demo-room-1', onExit, onRoomChange 
         className="w-full h-full"
         style={{ display: 'block' }}
       />
-      
+
       {/* Desktop/Mobile Controls - visible when NOT in VR */}
       {!isInVR && (
         <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black/80 to-transparent p-6 z-10">
@@ -279,11 +279,10 @@ export default function VRViewer({ roomId = 'demo-room-1', onExit, onRoomChange 
                 <button
                   key={room.id}
                   onClick={() => setCurrentRoomId(room.id)}
-                  className={`px-4 py-2 rounded-lg font-medium transition ${
-                    currentRoomId === room.id
+                  className={`px-4 py-2 rounded-lg font-medium transition ${currentRoomId === room.id
                       ? 'bg-blue-600 text-white'
                       : 'bg-slate-600 text-gray-100 hover:bg-slate-700'
-                  }`}
+                    }`}
                 >
                   {room.name}
                 </button>
