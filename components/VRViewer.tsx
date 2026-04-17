@@ -74,7 +74,6 @@ export default function VRViewer({ roomId = 'demo-room-1', onExit, onRoomChange 
 
       const skyboxMaterial = new BABYLON.StandardMaterial('skyboxMat', scene);
       skyboxMaterial.emissiveTexture = new BABYLON.Texture(room.image, scene);
-      skyboxMaterial.emissiveTexture.uScale = -1;
       skyboxMaterial.backFaceCulling = false;
       skybox.material = skyboxMaterial;
 
