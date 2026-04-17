@@ -72,6 +72,9 @@ export default function VRViewer({ roomId = 'demo-room-1', onExit, onRoomChange 
         scene
       );
 
+      // Flip the sphere inside-out so camera is inside
+      skybox.scaling.x = -1;
+
       const skyboxMaterial = new BABYLON.StandardMaterial('skyboxMat', scene);
       skyboxMaterial.emissiveTexture = new BABYLON.Texture(room.image, scene);
       skyboxMaterial.backFaceCulling = false;
